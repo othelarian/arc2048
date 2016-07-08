@@ -5,6 +5,10 @@ Window {
     property int actwidth: width
     property int actheight: height
     property bool wider: actwidth < actheight
+    property int curscore: 100
+    property int bestscore: 2340
+    property int highlvl: 512
+
     width: 350
     height: 200
     visible: true
