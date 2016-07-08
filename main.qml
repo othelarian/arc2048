@@ -33,22 +33,5 @@ Window {
         //
     }
 
-    Rectangle {
-        id: scorezone
-        x: (!wider) ? gamezone.width : 0
-        y: (!wider) ? 0 : gamezone.height
-        width: (wider) ? actwidth : actwidth - gamezone.width
-        height: (wider) ? actheight - gamezone.height : actheight
-        color: "white"
-
-        //
-        Text {
-            id: testtext
-            text: "test"
-            //
-        }
-
-        //
-        // TODO : side elts
-    }
+    ScoreZone {}
 }
