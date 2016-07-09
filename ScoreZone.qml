@@ -4,6 +4,7 @@ Rectangle {
     property int rectsize: height/6
     property int fontsize: (rectsize/3)*1
 
+    property string debugstr: "none"
 
     id: scorezone
     x: (!wider) ? gamezone.width : 0
@@ -76,6 +77,19 @@ Rectangle {
             text: "New Game"
             //
             //
+        }
+    }
+
+    //DEBUG ZONE
+    Rectangle {
+        width: parent.width
+        height: rectsize
+        y: rectsize*5
+
+        Text {
+            anchors.centerIn: parent
+            font.pixelSize: fontsize
+            text: debugstr
         }
     }
 }

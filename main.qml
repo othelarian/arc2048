@@ -1,6 +1,8 @@
 import QtQuick 2.7
 import QtQuick.Window 2.2
 
+import "engine.js" as Game
+
 Window {
     property int actwidth: width
     property int actheight: height
@@ -21,13 +23,17 @@ Window {
         focus: true
 
         Keys.onPressed: {
+            if (event.key == Qt.Key_Up) {
+                //
+                Game.setUp();
+                //
+            }
             if (event.key == Qt.Key_Down) {
                 //
                 //
                 testtext.text = "down"
                 //
             }
-            if (event.key == Qt.Key_Up) testtext.text = "up"
             if (event.key == Qt.Key_Right) testtext.text = "right"
             if (event.key == Qt.Key_Left) testtext.text = "left"
         }
@@ -37,5 +43,5 @@ Window {
         //
     }
 
-    ScoreZone {}
+    ScoreZone {id: scorezone}
 }
