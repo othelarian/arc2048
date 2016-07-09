@@ -23,19 +23,34 @@ Window {
         focus: true
 
         Keys.onPressed: {
-            if (event.key == Qt.Key_Up) {
-                //
-                Game.setUp();
-                //
+            if (event.key == Qt.Key_Up) { Game.setUp() }
+            if (event.key == Qt.Key_Down) { Game.setDown() }
+            if (event.key == Qt.Key_Right) { Game.setRight() }
+            if (event.key == Qt.Key_Left) { Game.setLeft() }
+        }
+
+        MouseArea {
+            property int posX: 0
+            property int posY: 0
+
+            anchors.fill: parent
+            hoverEnabled: false
+
+            onPressed: { posX = mouseX; posY = mouseY; }
+            onReleased: {
+                var movX = (mouseX<posX)? posX-mouseX : mouseX-posX
+                var movY = (mouseY<posY)? posY-mouseY : mouseY-posY
+                var minimp = parent.width/8;
+                if (movX<minimp && movY<minimp) {}
+                else {
+                    if (movX>movY) {
+                        (mouseX<posX)? Game.setLeft() : Game.setRight()
+                    }
+                    else {
+                        (mouseY<posY)? Game.setUp() : Game.setDown()
+                    }
+                }
             }
-            if (event.key == Qt.Key_Down) {
-                //
-                //
-                testtext.text = "down"
-                //
-            }
-            if (event.key == Qt.Key_Right) testtext.text = "right"
-            if (event.key == Qt.Key_Left) testtext.text = "left"
         }
 
         //
