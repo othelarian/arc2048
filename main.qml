@@ -59,4 +59,6 @@ Window {
     }
 
     ScoreZone {id: scorezone}
+
+    InitDialog {id: initdiag; visible: false}
 }

@@ -1,5 +1,7 @@
 import QtQuick 2.0
 
+import "engine.js" as Game
+
 Rectangle {
     property int rectsize: height/6
     property int fontsize: (rectsize/3)*1
@@ -61,12 +63,13 @@ Rectangle {
         color: "#ccc"
 
         MouseArea {
-            //property int
-
             anchors.fill: parent
-            //
-            //
-            //
+            onClicked: {
+                //
+                Game.askNewPlay()
+                //
+                //Game.initPlay()
+            }
         }
 
         Text {
@@ -75,8 +78,6 @@ Rectangle {
             font.bold: true
             font.pixelSize: fontsize
             text: "New Game"
-            //
-            //
         }
     }
 

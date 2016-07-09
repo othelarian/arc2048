@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>ScoreZone.qml</file>
         <file>engine.js</file>
+        <file>InitDialog.qml</file>
     </qresource>
 </RCC>

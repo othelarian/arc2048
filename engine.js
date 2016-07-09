@@ -1,7 +1,14 @@
 //engine.js
 
+function askNewPlay() {
+    //
+    initdiag.visible = true
+    //
+}
+
 function initPlay() {
     //
+    scorezone.debugstr = "init play";
     //
 }
 
