@@ -1,14 +1,12 @@
 //engine.js
 
-function askNewPlay() {
-    //
-    initdiag.visible = true
-    //
+function toggleInitDiag() {
+    initdiag.visible = !initdiag.visible
 }
 
 function initPlay() {
     //
-    scorezone.debugstr = "init play";
+    //
     //
 }
 

@@ -64,12 +64,7 @@ Rectangle {
 
         MouseArea {
             anchors.fill: parent
-            onClicked: {
-                //
-                Game.askNewPlay()
-                //
-                //Game.initPlay()
-            }
+            onClicked: { Game.toggleInitDiag() }
         }
 
         Text {
@@ -78,19 +73,6 @@ Rectangle {
             font.bold: true
             font.pixelSize: fontsize
             text: "New Game"
-        }
-    }
-
-    //DEBUG ZONE
-    Rectangle {
-        width: parent.width
-        height: rectsize
-        y: rectsize*5
-
-        Text {
-            anchors.centerIn: parent
-            font.pixelSize: fontsize
-            text: debugstr
         }
     }
 }

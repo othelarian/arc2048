@@ -8,7 +8,7 @@ Window {
     property int actheight: height
     property bool wider: actwidth < actheight
     property int squaresize: gamezone.width/4
-    property int squarefont: squaresize/3
+    property int squarefont: squaresize/4
     property int curscore: 100
     property int bestscore: 2340
     property int highlvl: 512
@@ -75,7 +75,7 @@ Window {
 
                     Text {
                         anchors.centerIn: parent
-                        font.pixelSize: pi
+                        font.pixelSize: squarefont
                         text: ""
                     }
                 }
