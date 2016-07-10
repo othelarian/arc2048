@@ -7,6 +7,8 @@ Window {
     property int actwidth: width
     property int actheight: height
     property bool wider: actwidth < actheight
+    property int squaresize: gamezone.width/4
+    property int squarefont: squaresize/3
     property int curscore: 100
     property int bestscore: 2340
     property int highlvl: 512
@@ -53,9 +55,32 @@ Window {
             }
         }
 
-        //
-        // TODO : add the grid
-        //
+        Grid {
+            columns: 4
+            rows: 4
+            columnSpacing: squaresize*0.05
+            rowSpacing: squaresize*0.05
+            topPadding: squaresize*0.025
+            leftPadding: squaresize*0.025
+
+            Repeater {
+                id: boxrepeater
+                model: 16
+
+                Rectangle {
+                    width: squaresize *0.95
+                    height: squaresize *0.95
+                    radius: 5
+                    color: "white"
+
+                    Text {
+                        anchors.centerIn: parent
+                        font.pixelSize: pi
+                        text: ""
+                    }
+                }
+            }
+        }
     }
 
     ScoreZone {id: scorezone}

@@ -4,7 +4,7 @@ import "engine.js" as Game
 
 Rectangle {
     property int rectsize: height/6
-    property int fontsize: (rectsize/3)*1
+    property int fontsize: rectsize/3
 
     property string debugstr: "none"
 
