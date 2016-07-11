@@ -1,5 +1,6 @@
 import QtQuick 2.7
 import QtQuick.Window 2.2
+import Qt.labs.settings 1.0
 
 import "engine.js" as Game
 
@@ -16,6 +17,11 @@ Window {
     width: 350
     height: 200
     visible: true
+
+    Settings {
+        //
+        //
+    }
 
     Rectangle {
         id: gamezone
@@ -65,18 +71,25 @@ Window {
 
             Repeater {
                 id: boxrepeater
-                model: 16
+                //
+                model: [
+                    ["","white"],["","white"],["","white"],["","white"],
+                    ["","white"],["","white"],["","white"],["","white"],
+                    ["","white"],["","white"],["","white"],["","white"],
+                    ["","white"],["","white"],["","white"],["","white"]
+                ]
+                //
 
                 Rectangle {
                     width: squaresize *0.95
                     height: squaresize *0.95
                     radius: 5
-                    color: "white"
+                    color: modelData[1]
 
                     Text {
                         anchors.centerIn: parent
                         font.pixelSize: squarefont
-                        text: ""
+                        text: modelData[0]
                     }
                 }
             }
