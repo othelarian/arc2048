@@ -71,14 +71,11 @@ Window {
 
             Repeater {
                 id: boxrepeater
-                //
-                model: [
-                    ["","white"],["","white"],["","white"],["","white"],
-                    ["","white"],["","white"],["","white"],["","white"],
-                    ["","white"],["","white"],["","white"],["","white"],
-                    ["","white"],["","white"],["","white"],["","white"]
-                ]
-                //
+                model: {
+                    var data = []
+                    for (var i=0;i<16;i++) data.push(["","white"])
+                    return data
+                }
 
                 Rectangle {
                     width: squaresize *0.95
